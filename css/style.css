@@ -79,6 +79,10 @@ form {
     margin: auto;
 }
 
+form textarea {
+    height: 150px; /* aumentado a área do campo da mensagem */
+}
+
 form label, form input, form textarea {
     margin-bottom: 1rem;
 }
