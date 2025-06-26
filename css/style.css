@@ -1,0 +1,142 @@
+:root {
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1e1e2f;
+    color: #fff;
+    position: relative;
+}
+
+.banner h1 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+footer {
+    background-color: #1e1e2f;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+form label, form input, form textarea {
+    margin-bottom: 1rem;
+}
+
+form button {
+    padding: 0.5rem;
+    background-color: #1e1e2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#btnTopo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 0.5rem 1rem;
+    background-color: #1e1e2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    height: 300px;
+    color: white;
+
+    /* Define a imagem de fundo para desktop */
+    background-image: url('../img/banner.jpeg'); /* <-- Coloque o caminho correto da sua imagem de DESKTOP */
+    background-size: cover; /* Funciona como o object-fit */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+
+    .banner {
+        height: 250px; /* Podemos até dar um pouco mais de altura */
+
+        /* TROCA a imagem de fundo para a versão mobile */
+        background-image: url('../img/banner-mobile.jpeg'); /* <-- Coloque o caminho da sua NOVA imagem de MOBILE */
+    }
+    
+    nav ul {
+        flex-direction: column;
+        display: none;
+        background-color: #1e1e2f;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
