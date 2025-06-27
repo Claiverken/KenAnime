@@ -1,28 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR"> <!-- Define o tipo de documento e o idioma como português do Brasil -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KenAnimes - Contato">
-    <title>KenAnimes - Contato</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura o layout responsivo para diferentes dispositivos -->
+    <meta name="description" content="KenAnimes - Contato"> <!-- Descrição da página para mecanismos de busca -->
+    <title>KenAnimes - Contato</title> <!-- Título da página que aparece na aba do navegador -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Link para o arquivo de estilo externo -->
+
+    <!-- Estilo interno para as mensagens de erro -->
     <style>
-        /* Estilo para as mensagens de erro */
         .error {
-            color: red;
-            font-size: 0.9em;
-            margin-top: -10px;
-            margin-bottom: 10px;
-            display: block;
+            color: red; /* Cor do texto da mensagem de erro */
+            font-size: 0.9em; /* Tamanho da fonte da mensagem de erro */
+            margin-top: -10px; /* Espaçamento superior negativo para aproximar do campo */
+            margin-bottom: 10px; /* Espaçamento inferior */
+            display: block; /* Exibe como bloco para ocupar uma linha inteira */
         }
     </style>
 </head>
 <body>
+    <!-- Cabeçalho da página -->
     <header>
-        <div class="banner"></div>
+        <div class="banner"></div> <!-- Div para o banner, pode conter uma imagem ou cor de fundo -->
         <nav>
+            <!-- Ícone do menu hamburguer para navegação mobile -->
             <div class="menu-toggle" id="menu-toggle">☰</div>
             <ul id="menu">
+                <!-- Links de navegação -->
                 <li><a href="index.html">Home</a></li>
                 <li><a href="animes.html">Animes</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
@@ -31,24 +35,41 @@
         </nav>
     </header>
 
+    <!-- Seção de contato -->
     <section>
         <h2>Contato</h2>
+        <!-- Formulário de contato usando o Formspree para envio -->
         <form id="contactForm" action="https://formspree.io/f/xovwpyvo" method="POST">
+            <!-- Campo de nome -->
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome">
-            <span class="error" id="nomeError"></span> <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <span class="error" id="emailError"></span> <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem"></textarea>
-            <span class="error" id="mensagemError"></span> <button type="submit">Enviar</button>
-        </form>
-    </section> <button id="btnTopo">Voltar ao Topo</button>
+            <span class="error" id="nomeError"></span> <!-- Área para exibir mensagem de erro do nome -->
 
+            <!-- Campo de email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span class="error" id="emailError"></span> <!-- Área para exibir mensagem de erro do email -->
+
+            <!-- Campo de mensagem -->
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem"></textarea>
+            <span class="error" id="mensagemError"></span> <!-- Área para exibir mensagem de erro da mensagem -->
+
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Botão para voltar ao topo da página -->
+    <button id="btnTopo">Voltar ao Topo</button>
+
+    <!-- Rodapé da página -->
     <footer>
-        <p>&copy; 2025 KenAnimes</p>
+        <p>&copy; 2025 KenAnimes</p> <!-- Informações de direitos autorais -->
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/validation.js"></script>
+    <!-- Scripts externos -->
+    <script src="js/script.js"></script> <!-- Script de funcionalidades gerais -->
+    <script src="js/validation.js"></script> <!-- Script de validação do formulário -->
 </body>
 </html>

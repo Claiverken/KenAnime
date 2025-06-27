@@ -1,13 +1,30 @@
+/*
+  Define o comportamento do box-sizing para todos os elementos.
+  'border-box' garante que o padding e a borda sejam incluídos na largura e altura totais do elemento,
+  o que facilita o dimensionamento dos layouts.
+*/
 :root {
     box-sizing: border-box;
 }
 
+/*
+  Seletor universal (*) que reseta as margens e paddings de todos os elementos para zero.
+  Isso garante que o layout comece de forma consistente em todos os navegadores,
+  removendo os estilos padrão que eles aplicam.
+*/
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Garante que o box-sizing seja aplicado a todos os elementos */
 }
 
+/*
+  Estilos aplicados ao corpo (body) da página.
+  - Define uma família de fontes padrão para o site.
+  - Define uma cor de fundo clara.
+  - Define a cor do texto principal.
+  - Ajusta o espaçamento entre as linhas (line-height) para melhorar a legibilidade.
+*/
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
@@ -15,12 +32,26 @@ body {
     line-height: 1.6;
 }
 
+/*
+  Estilos para o cabeçalho (<header>).
+  - Define uma cor de fundo escura.
+  - Define a cor do texto como branca.
+  - 'position: relative' é usado para que elementos filhos com 'position: absolute'
+    (como o título do banner) se posicionem em relação ao header.
+*/
 header {
     background-color: #1e1e2f;
     color: #fff;
     position: relative;
 }
 
+/*
+  Estiliza o título (h1) dentro da classe 'banner'.
+  - 'position: absolute' o posiciona em relação ao elemento pai ('header').
+  - 'bottom: 10px' e 'left: 50%' o colocam na parte inferior e no centro horizontal do header.
+  - 'transform: translateX(-50%)' ajusta o centro do elemento para o centro exato do header.
+  - Um fundo semitransparente é adicionado para garantir a legibilidade do texto sobre a imagem do banner.
+*/
 .banner h1 {
     position: absolute;
     bottom: 10px;
@@ -32,10 +63,18 @@ header {
     border-radius: 10px;
 }
 
+/* Estiliza a barra de navegação (<nav>). */
 nav {
-    background-color: #333;
+    background-color: #333; /* Cor de fundo escura para a navegação. */
 }
 
+/*
+  Estiliza a lista não ordenada (<ul>) dentro da navegação.
+  - 'list-style: none' remove os marcadores (bolinhas) da lista.
+  - 'display: flex' organiza os itens do menu em uma linha.
+  - 'justify-content: center' centraliza os itens do menu horizontalmente.
+  - 'gap' adiciona um espaçamento entre os itens do menu.
+*/
 nav ul {
     list-style: none;
     display: flex;
@@ -44,12 +83,19 @@ nav ul {
     padding: 1rem 0;
 }
 
+/* Estiliza os links (<a>) dentro da navegação. */
 nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    color: #fff; /* Cor do texto branca. */
+    text-decoration: none; /* Remove o sublinhado dos links. */
+    font-weight: bold; /* Deixa o texto em negrito. */
 }
 
+/*
+  Estilos para o ícone do menu hambúrguer.
+  - 'display: none' o esconde por padrão em telas maiores.
+  - 'cursor: pointer' mostra um ícone de mão ao passar o mouse.
+  - 'position: absolute' o posiciona no canto superior direito do header.
+*/
 .menu-toggle {
     display: none;
     font-size: 2rem;
@@ -59,42 +105,57 @@ nav a {
     right: 20px;
 }
 
+/* Estiliza o conteúdo principal (<main>). */
 main {
-    padding: 2rem;
-    text-align: center;
+    padding: 2rem; /* Adiciona espaçamento interno para afastar o conteúdo das bordas. */
+    text-align: center; /* Centraliza o texto dentro da seção principal. */
 }
 
+/* Estiliza o rodapé (<footer>). */
 footer {
-    background-color: #1e1e2f;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
+    background-color: #1e1e2f; /* Cor de fundo escura. */
+    color: #fff; /* Cor do texto branca. */
+    text-align: center; /* Centraliza o texto. */
+    padding: 1rem; /* Adiciona espaçamento interno. */
+    margin-top: 2rem; /* Adiciona uma margem no topo para separar do conteúdo acima. */
 }
 
+/* Estiliza o formulário (<form>). */
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
+    display: flex; /* Organiza os campos do formulário em um layout flexível. */
+    flex-direction: column; /* Alinha os campos verticalmente (um abaixo do outro). */
+    max-width: 400px; /* Define uma largura máxima para o formulário. */
+    margin: auto; /* Centraliza o formulário na página. */
 }
 
+/* Define uma altura fixa para a área de texto da mensagem. */
 form textarea {
-    height: 150px; /* aumentado a área do campo da mensagem */
+    height: 150px; /* Aumenta a área do campo da mensagem */
 }
 
+/*
+  Estilos aplicados a todos os labels, inputs e textareas dentro do formulário.
+  - Adiciona uma margem inferior para criar espaçamento entre os campos.
+*/
 form label, form input, form textarea {
     margin-bottom: 1rem;
 }
 
+/* Estiliza o botão de envio do formulário. */
 form button {
-    padding: 0.5rem;
-    background-color: #1e1e2f;
-    color: white;
-    border: none;
-    cursor: pointer;
+    padding: 0.5rem; /* Adiciona espaçamento interno ao botão. */
+    background-color: #1e1e2f; /* Cor de fundo escura. */
+    color: white; /* Cor do texto branca. */
+    border: none; /* Remove a borda padrão. */
+    cursor: pointer; /* Mostra um ícone de mão ao passar o mouse. */
 }
 
+/*
+  Estilos para o botão "Voltar ao Topo".
+  - 'position: fixed' o mantém fixo na tela, mesmo com a rolagem.
+  - 'bottom: 20px' e 'right: 20px' o posicionam no canto inferior direito.
+  - 'display: none' o esconde por padrão. Ele será exibido via JavaScript.
+*/
 #btnTopo {
     position: fixed;
     bottom: 20px;
@@ -107,6 +168,13 @@ form button {
     display: none;
 }
 
+/*
+  Estiliza a seção do banner.
+  - 'position: relative' para servir de referência para elementos filhos com 'position: absolute'.
+  - Define a imagem de fundo para a versão desktop.
+  - 'background-size: cover' redimensiona a imagem para cobrir toda a área do banner.
+  - 'background-position: center' centraliza a imagem de fundo.
+*/
 .banner {
     position: relative;
     text-align: center;
@@ -114,21 +182,30 @@ form button {
     color: white;
 
     /* Define a imagem de fundo para desktop */
-    background-image: url('../img/banner.jpeg'); /* <-- Coloque o caminho correto da sua imagem de DESKTOP */
-    background-size: cover; /* Funciona como o object-fit */
-    background-position: center; /* Centraliza a imagem */
+    background-image: url('../img/banner.jpeg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
+/*
+  Media Query para telas com largura máxima de 768px (tablets e celulares).
+  Os estilos dentro deste bloco serão aplicados apenas nesses dispositivos.
+*/
 @media (max-width: 768px) {
 
+    /* Ajusta a altura do banner e troca a imagem de fundo para uma versão otimizada para mobile. */
     .banner {
-        height: 250px; /* Podemos até dar um pouco mais de altura */
-
-        /* TROCA a imagem de fundo para a versão mobile */
-        background-image: url('../img/banner-mobile.jpeg'); /* <-- Coloque o caminho da sua NOVA imagem de MOBILE */
+        height: 250px;
+        background-image: url('../img/banner-mobile.jpeg');
     }
     
+    /*
+      Estiliza o menu de navegação para a versão mobile.
+      - 'flex-direction: column' empilha os itens do menu verticalmente.
+      - 'display: none' o esconde por padrão (será exibido via JavaScript).
+      - 'position: absolute' o posiciona em relação ao header.
+    */
     nav ul {
         flex-direction: column;
         display: none;
@@ -140,6 +217,7 @@ form button {
         border-radius: 10px;
     }
 
+    /* Torna o ícone do menu hambúrguer visível em telas pequenas. */
     .menu-toggle {
         display: block;
     }
